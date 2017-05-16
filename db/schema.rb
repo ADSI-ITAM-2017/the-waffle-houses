@@ -10,7 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170513000720) do
+ActiveRecord::Schema.define(version: 20170515123746) do
+
+  create_table "pictures", force: :cascade do |t|
+    t.integer  "property_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.index ["property_id"], name: "index_pictures_on_property_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.text     "address"
+    t.decimal  "cost"
+    t.boolean  "tipo"
+    t.integer  "roomie"
+    t.integer  "room"
+    t.boolean  "pet"
+    t.boolean  "parking"
+    t.boolean  "service"
+    t.boolean  "internet"
+    t.text     "description"
+    t.integer  "user_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_properties_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

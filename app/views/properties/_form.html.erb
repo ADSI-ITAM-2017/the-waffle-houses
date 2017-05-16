@@ -1,0 +1,87 @@
+<%= form_for @property, :html => { :class => 'form-horizontal', multipart: true } do |f| %>
+  <% if property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+      <% property.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :address %>
+    <%= f.text_area :address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= f.label :tipo %>
+    <%= f.check_box :tipo %>
+  </div>
+
+  <div class="field">
+    <%= f.label :roomie %>
+    <%= f.number_field :roomie %>
+  </div>
+
+  <div class="field">
+    <%= f.label :room %>
+    <%= f.number_field :room %>
+  </div>
+
+  <div class="field">
+    <%= f.label :pet %>
+    <%= f.check_box :pet %>
+  </div>
+
+  <div class="field">
+    <%= f.label :parking %>
+    <%= f.check_box :parking %>
+  </div>
+
+  <div class="field">
+    <%= f.label :service %>
+    <%= f.check_box :service %>
+  </div>
+
+  <div class="field">
+    <%= f.label :internet %>
+    <%= f.check_box :internet %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :pictures, :class => 'control-label' %>
+    <div class="controls">
+      <!-- The magic is coming ...look at my eyes....shazammmm -->
+      <!-- Use HTML5 multiple attribute to enable multiple selection
+           and pass back to controller all files as an array, ready 
+           for paperclip!!
+           file_field_tag, since images is not a gallery attribute
+       -->
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                properties_path, :class => 'btn btn-mini' %>
+  </div>
+<% end %>

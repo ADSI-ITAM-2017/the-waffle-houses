@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<% @property.pictures do |picture| %> 
+  <p> <%= picture.image_file_name %></p>
+ <%= image_tag picture.image_url(:thumb)
+<% end %>
+
+<p>
+  <strong>Address:</strong>
+  <%= @property.address %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @property.cost %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @property.tipo %>
+</p>
+
+<p>
+  <strong>Roomie:</strong>
+  <%= @property.roomie %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @property.room %>
+</p>
+
+<p>
+  <strong>Pet:</strong>
+  <%= @property.pet %>
+</p>
+
+<p>
+  <strong>Parking:</strong>
+  <%= @property.parking %>
+</p>
+
+<p>
+  <strong>Service:</strong>
+  <%= @property.service %>
+</p>
+
+<p>
+  <strong>Internet:</strong>
+  <%= @property.internet %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @property.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @property.user %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>

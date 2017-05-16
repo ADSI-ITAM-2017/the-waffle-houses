@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :properties
   default_url_options :host => "localhost:3000"
   devise_for :users
   get 'welcome/index'

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyText
+  cost: 9.99
+  type: false
+  roomie: 1
+  room: 1
+  pet: false
+  parking: false
+  service: false
+  internet: false
+  description: MyText
+  user: one
+
+two:
+  address: MyText
+  cost: 9.99
+  type: false
+  roomie: 1
+  room: 1
+  pet: false
+  parking: false
+  service: false
+  internet: false
+  description: MyText
+  user: two

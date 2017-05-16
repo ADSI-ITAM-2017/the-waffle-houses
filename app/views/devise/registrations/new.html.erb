@@ -24,8 +24,13 @@
   </div>
 
   <div class="field">
+    <%= f.label "Teléfono" %><br />
+    <%= f.text_field :telephone, required: true %>
+  </div>
+
+  <div class="field">
     <%= f.label "¿Qué quiero hacer en Waffle-Houses?" %><br />
-    <%= f.select :type, [['Quiero rentar',0],['Quiero publicar',1]] %>
+    <%= f.select :user_type, [['Quiero rentar',0],['Quiero publicar',1]] %>
   </div>
 
   <div class="field">

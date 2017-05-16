@@ -5,17 +5,17 @@
 
   <div class="field">
     <%= f.label "Nombre" %><br />
-    <%= f.email_field :first_name, required: true %>
+    <%= f.text_field :first_name, required: true %>
   </div>
 
   <div class="field">
     <%= f.label "Apellido(s)" %><br />
-    <%= f.email_field :last_name, required: true %>
+    <%= f.text_field :last_name, required: true %>
   </div>
 
   <div class="field">
     <%= f.label "Fecha de nacimiento" %><br />
-    <%= f.email_field :date_of_birth, required: true %>
+    <%= f.date_select :date_of_birth, required: true, start_year: 1950, end_year: 2005 %>
   </div>
 
   <div class="field">

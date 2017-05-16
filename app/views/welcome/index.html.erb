@@ -1,9 +1,152 @@
-<h1>Hello, Rails!</h1>
-<% if user_signed_in? %>
-  Logged in as <strong><%= current_user.email %></strong>.
-  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-<% else %>
-  <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-<% end %>
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title><"Waffle-House" </title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
+  </head>
+  <body >
+
+    <header class="navbar navbar-fixed-top">
+
+      <header class="navbar fixed-top navbar-toggleable-md navbar-light navbar-inverse" id="mainNav">
+          <div class="container">
+              <a class="navbar-brand" href="#page-top">Waffle House</a>
+
+              <ul class="nav navbar-nav navbar-right ">
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Modalidades</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Acerca de Nosotros</a>
+                </li>
+                <% if user_signed_in? %>
+                  Logged in as <strong><%= current_user.email %></strong>.
+                <li>  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |</li>
+                <li>  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
+                <% else %>
+                  <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> | </li>
+                <li>  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> </li>
+                <% end %>
+
+              </ul>
+          </div>
+      </header>
+
+      </div>
+      <div>
+
+    </div>
+
+    </header>
+    <div class="container">
+      <%= yield %>
+      <!-- Header -->
+      <header class="masthead">
+          <div class="container">
+              <img class="img-fluid" src = "<%= image_path('profile.png') %> "alt="">
+              <div class="intro-text">
+                  <span class="name">Busca Ahora</span>
+                  <hr class="star-light">
+                  <span class="skills">Encuentra tu casa - Encuentra a tu inquilino - Opina</span>
+              </div>
+          </div>
+      </header>
+    </div>
+
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="text-center">Modalidades</h2>
+            <hr class="star-primary">
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <div class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src = "<%= image_path('bedroom.png') %> " alt="">
+                    </div>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <div class="portfolio-link" href="#portfolioModal2" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src = "<%= image_path('casa.png') %> " alt="">
+                    </div>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <div class="portfolio-link" href="#portfolioModal3" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src = "<%= image_path('departments.png') %> " alt="">
+                    </div>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <div class="portfolio-link" href="#portfolioModal4" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src = "<%= image_path('estudio.png') %> " alt="">
+                    </div>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <div class="portfolio-link" href="#portfolioModal5" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src = "<%= image_path('house.png') %> " alt="">
+                    </div>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <div class="portfolio-link" href="#portfolioModal6" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img class="img-fluid" src = "<%= image_path('depart.png') %> " alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="success" id="about">
+        <div class="container">
+            <h2 class="text-center">Acerca de Nosotros</h2>
+            <hr class="star-light">
+            <div class="row">
+                <div class="col-lg-4 offset-lg-2">
+                    <p>Plataforma para estudiantes que quieren rentar un cuarto.</p>
+                </div>
+                <div class="col-lg-4">
+                    <p> Plataforma para Caseros que quierdar dar a conocer su propiedad. </p>
+                </div>
+                <div class="col-lg-4">
+                    <p> ¡ Opina LIbremente ! Puedes calificar tanto a los inquilinos como a los caseros. </p>
+                </div>
+            </div>
+        </div>
+    </section>
+  </body>
+</html>

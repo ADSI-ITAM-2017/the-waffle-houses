@@ -38,8 +38,13 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
+    def sign_up_params
+    params.require(:user).permit(:first_name, :last_name, :email, :date_of_birth, :user_type, :telephone, :password, :password_confirmation)
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:role, :user_name)
     end
+    
 end

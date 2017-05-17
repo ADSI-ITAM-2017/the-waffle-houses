@@ -30,7 +30,7 @@
                 </li>
                 <% if user_signed_in? %>
                   Logged in as <strong><%= current_user.email %></strong>.
-                <li>  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |</li>
+                <li>  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
                 <li>  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
                 <% else %>
                   <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> | </li>
@@ -47,10 +47,10 @@
     </div>
 
     </header>
-    <div class="container">
+    <div class="container" style="width:102%; padding: -50px">
       <%= yield %>
       <!-- Header -->
-      <header class="masthead">
+      <header class="masthead" >
           <div class="container">
               <img class="img-fluid" src = "<%= image_path('profile.png') %> "alt="">
               <div class="intro-text">
@@ -131,6 +131,7 @@
             </div>
         </div>
     </section>
+
     <section class="success" id="about">
         <div class="container">
             <h2 class="text-center">Acerca de Nosotros</h2>
@@ -143,10 +144,59 @@
                     <p> Plataforma para Caseros que quierdar dar a conocer su propiedad. </p>
                 </div>
                 <div class="col-lg-4">
-                    <p> ¡ Opina LIbremente ! Puedes calificar tanto a los inquilinos como a los caseros. </p>
+                    <p> ¡ Opina Libremente ! Puedes calificar tanto a los inquilinos como a los caseros. </p>
                 </div>
             </div>
         </div>
     </section>
+
+    <footer class="text-center" style= "background-color:#2C3E50">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-4">
+                        <h3 style="color:white" >Dirección:</h3>
+                        <p style="color:white">Rio Hondo #1
+                            <br style="color:white">Álvaro Obregón. CP: 01620. México D.F.</p>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3 style="color:white">Redes Sociales</h3>
+
+                        <ul class="list-inline">
+                            <li class="list-inline-item">
+                                <a style="color:white" class="btn-social btn-outline" href="#"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-social btn-outline" href="#"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-social btn-outline" href="#"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-social btn-outline" href="#"><i class="fa fa-fw fa-linkedin"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-social btn-outline" href="#"><i class="fa fa-fw fa-dribbble"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="footer-col col-md-4">
+                        <h3 style="color:white">¿Quiénes Somos?</h3>
+                        <p style="color:white"> Estudiantes del ITAM ofreciendo una solución diferente al gran problema de los foraneos: Rentar</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="color:white">
+                        Copyright &copy; Waffle House 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
   </body>
 </html>

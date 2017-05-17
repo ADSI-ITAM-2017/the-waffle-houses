@@ -3,7 +3,6 @@
 <head>
 
 
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -20,7 +19,15 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
     <!-- Custom styles for this template -->
-
+    <title><"Waffle-House" </title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all',
+                                              'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
+      </script>
+    <![endif]-->
 
     <!-- Temporary navbar container fix -->
     <style>
@@ -35,9 +42,12 @@
     }
     </style>
 
+
+
 </head>
 
   <body>
+
 	  <p class="notice"><%= notice %></p>
 	  <p class="alert"><%= alert %></p>
     <%= yield %>

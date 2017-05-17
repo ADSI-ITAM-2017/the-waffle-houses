@@ -39,7 +39,7 @@ class UsersController < ApplicationController
     end
 
     def sign_up_params
-    params.require(:user).permit(:first_name, :last_name, :email, :date_of_birth, :user_type, :telephone, :password, :password_confirmation)
+    params.require(:user).permit(:email, :password, :password_confirmation)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

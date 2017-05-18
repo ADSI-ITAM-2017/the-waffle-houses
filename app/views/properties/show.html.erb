@@ -18,7 +18,7 @@
  <%= image_tag picture.image_url %>
 <% end %>
 
-
+<%= @prop_id = @property.id  %>
 
 <h3 style="color: #18BC9C"><i class="fa fa-home" aria-hidden="true"></i>  <%= @property.title %></h3>    
                     <h3>$<%= @property.cost %></h3>
@@ -52,9 +52,17 @@
 
 <div class="well">
 
+                       <% if user_signed_in? %>
+
                       <div class="text-right">
-                          <a class="btn btn-success">Leave a Review</a>
+                          <%= link_to 'Comentar', new_comment_path(:id => @prop_id), :class => 'btn btn-success' %>
                       </div>
+
+                      <% else %>
+
+                        <%= link_to 'Registrarme', new_user_registration_path, :class => 'btn btn-success' %>
+
+                      <% end %>
 
                       <hr>
 
@@ -65,9 +73,7 @@
                               <span class="glyphicon glyphicon-star"></span>
                               <span class="glyphicon glyphicon-star"></span>
                               <span class="glyphicon glyphicon-star-empty"></span>
-                              Anonymous
-                              <span class="pull-right">10 days ago</span>
-                              <p>This product was great in terms of quality. I would definitely buy another!</p>
+                              <%= @comments = Comment.all %>
                           </div>
                       </div>
 

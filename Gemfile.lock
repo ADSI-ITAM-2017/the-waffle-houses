@@ -96,16 +96,13 @@ GEM
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
-
     paperclip (5.1.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-
     paypal-recurring (1.1.0)
-
     puma (3.8.2)
     pundit (1.1.0)
       activesupport (>= 3.0.0)

@@ -14,6 +14,7 @@
 
 
     <!-- Custom fonts for this template -->
+    <script src="https://use.fontawesome.com/5476b0ea9b.js"></script>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
@@ -46,10 +47,102 @@
 
 </head>
 
-  <body>
+  <body >
+
+    <header class="navbar navbar-fixed-top">
+
+      <header class="navbar fixed-top navbar-toggleable-md navbar-light navbar-inverse" id="mainNav">
+          <div class="container">
+              <a class="navbar-brand"><%= link_to 'Waffle Houses', root_path, :class => 'navbar-brand' %></a>
+
+              <ul class="nav navbar-nav navbar-right ">
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Quiero rentar</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#portfolio">Quiero publicar</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">Acerca de Nosotros</a>
+                </li>
+                <% if user_signed_in? %>
+                    <i class="fa fa-user" aria-hidden="true" style="font-size: 10px; color: #ffffff"></i> <strong style="color: white;"><%= current_user.email %></strong>
+                  
+                <li>  <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+                <li>  <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
+                <% else %>
+                  <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> . </li>
+                <li>  <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %> </li>
+                <% end %>
+
+              </ul>
+          </div>
+      </header>
+
+    </header>
 
 	  <p class="notice"><%= notice %></p>
 	  <p class="alert"><%= alert %></p>
     <%= yield %>
+
+
+       <footer class="text-center" style= "background-color:#2C3E50">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="text-center">
+                    <div class="footer-col col-md-4">
+                    <br>
+                        <i class="fa fa-map-marker" aria-hidden="true" style="font-size: 30px; color: white"></i>
+                        <h3 style="color:white; font-size: 20px" >Dirección:</h3>
+                        <p style="color:white; font-size: 15px">Rio Hondo #1
+                            <br style="color:white; font-size: 10px">Álvaro Obregón. CP: 01620. México D.F.</p>
+                    </div>
+                    </div>
+                    <div class="text-center">
+                    <div class="footer-col col-md-4">
+                    <br>
+                        <i class="fa fa-users" aria-hidden="true" style="font-size: 30px; color: white"></i>
+                        <h3 style="color:white; font-size: 20px">Redes Sociales</h3>
+                        
+                        <ul class="list-inline">
+
+                            <li class="list-inline-item">
+                                <a style="color:white" class="btn-social btn-outline" href="#"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-social btn-outline" href="#"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a class="btn-social btn-outline" href="#"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                    </div>
+                    <div class="text-center">
+                    <div class="footer-col col-md-4">
+                    <br>
+                        <i class="fa fa-question" aria-hidden="true" style="font-size: 30px; color: white"></i>
+                        <h3 style="color:white; font-size: 20px">¿Quiénes Somos?</h3>
+                        <p style="color:white; font-size: 15px"> Estudiantes del ITAM ofreciendo una solución diferente al gran problema de los foraneos: Rentar</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12" style="color:white">
+                        Copyright &copy; Waffle House 2017
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
   </body>
 </html>

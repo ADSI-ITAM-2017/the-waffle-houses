@@ -7,6 +7,8 @@
     <%= submit_tag "Search", :name => nil %>
 <% end %>
 
+<%= link_to "Advanced Search", new_search_path %>
+
 <% if @properties.blank? %>
   <h4>There are no properties containing the term <%= params[:search] %>.</h4>
 <% end %>

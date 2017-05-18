@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :properties
+  resources :searches
 
   get 'propiedad/index'
 

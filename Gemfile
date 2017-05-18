@@ -39,8 +39,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', '~> 4.2', '>= 4.2.1'
 
-gem 'paperclip', '~>4.2'
-
 gem 'paypal-recurring', '~> 1.1'
 
 gem 'pundit', '~> 1.1'

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'propiedad/index'
+
   default_url_options :host => "localhost:3000"
   devise_for :users
   get 'welcome/index'

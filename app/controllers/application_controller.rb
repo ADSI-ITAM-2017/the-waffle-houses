@@ -1,5 +1,9 @@
 class ApplicationController < ActionController::Base
-include Pundit
+
+  def index
+  end
+  
+  include Pundit
 
  protect_from_forgery with: :exception
 
@@ -25,3 +29,4 @@ include Pundit
    redirect_to(request.referrer || root_path)
  end
 end
+

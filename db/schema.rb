@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170518042539) do
 
   create_table "pictures", force: :cascade do |t|
@@ -24,6 +25,7 @@ ActiveRecord::Schema.define(version: 20170518042539) do
   end
 
   create_table "properties", force: :cascade do |t|
+
     t.string   "title"
     t.decimal  "cost"
     t.string   "delegacion"

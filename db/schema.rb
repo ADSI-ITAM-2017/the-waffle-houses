@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170517230102) do
 
-  create_table "conversations", force: :cascade do |t|
-    t.integer  "sender_id"
-    t.integer  "recipient_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -45,7 +38,6 @@ ActiveRecord::Schema.define(version: 20170517230102) do
     t.boolean  "gender"
     t.boolean  "type"
     t.string   "telephone"
-    t.boolean  "user_type"
     t.string   "genero"
     t.string   "tipo_de_usuario"
     t.index ["email"], name: "index_users_on_email", unique: true

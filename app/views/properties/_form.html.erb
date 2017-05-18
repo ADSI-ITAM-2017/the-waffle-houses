@@ -6,8 +6,7 @@
 <section id="portfolio">
         <div class="container">
 
-          <div class="col-sm-2 portfolio-item">
-  </div>
+
 
   <div class="col-sm-4 portfolio-item" style="align-content: right">
 <%= form_for @property, html: { class: 'form-horizontal', multipart: true } do |f| %>
@@ -45,6 +44,8 @@
     <%= f.text_field :colonia %>
   </div>
 
+
+
   <div class="field">
     <%= f.label "Calle" %><br />
     <%= f.text_field :street %>
@@ -54,6 +55,10 @@
     <%= f.label "Número exterior" %><br />
     <%= f.number_field :exterior %>
   </div>
+
+    </div>
+<div class="row">
+    <div class="col-sm-4 portfolio-item" style="align-content: right">
 
   <div class="field">
     <%= f.label "Número interior" %><br />
@@ -84,6 +89,9 @@
     <%= f.label "¿Se permiten mascotas?" %><br />
     <%= f.select :pet, [['Sí','Sí'],['No','No']] %>
   </div>
+  </div>
+
+    <div class="col-sm-4 portfolio-item" style="align-content: right">
 
   <div class="field">
     <%= f.label "¿Estacionamiento?" %><br />
@@ -112,6 +120,7 @@
     </div>
   </div>
 
+  <br>
   <div class="form-actions">
     <%= f.submit nil, class: 'btn btn-primary' %>
     <%= link_to t('.cancel', default: t("helpers.links.cancel")),
@@ -120,12 +129,9 @@
 <% end %>
 
 </div>
+</div>
 
-  <div class="col-sm-4 portfolio-item">
-  </div>
 
-  <div class="col-sm-2 portfolio-item">
-  </div>
   
 
   </div>

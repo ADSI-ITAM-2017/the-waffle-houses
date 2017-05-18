@@ -12,7 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170518085545) do
 
-<<<<<<< HEAD
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
@@ -20,8 +19,6 @@ ActiveRecord::Schema.define(version: 20170518085545) do
     t.datetime "updated_at",   null: false
   end
 
-=======
-<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -52,8 +49,8 @@ ActiveRecord::Schema.define(version: 20170518085545) do
     t.string   "tipo_de_usuario"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-=======
->>>>>>> 2f6a20335b3dfcc02d29e9dd843decc2519c0fe3
+
+
   create_table "pictures", force: :cascade do |t|
     t.integer  "property_id"
     t.datetime "created_at",         null: false
@@ -94,40 +91,7 @@ ActiveRecord::Schema.define(version: 20170518085545) do
     t.string   "tipo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
->>>>>>> 98848fd87394c5f97fd295684b419a64b0286484
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.integer  "failed_attempts",        default: 0,  null: false
-    t.string   "unlock_token"
-    t.datetime "locked_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "first_name"
-    t.string   "last_name"
-    t.date     "date_of_birth"
-    t.boolean  "gender"
-    t.boolean  "type"
-    t.string   "telephone"
-    t.boolean  "user_type"
-    t.string   "genero"
-    t.string   "tipo_de_usuario"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
+  
 end

@@ -6,64 +6,63 @@
 <section id="portfolio">
         <div class="container">
 
-<p id="notice"><%= notice %></p>
+            <p id="notice"><%= notice %></p>
 
-<h1>Properties</h1>
+            <h1>Properties</h1>
 
-<%= form_tag(properties_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Properties" %>
-    <%= submit_tag "Search", :name => nil %>
-<% end %>
+            <%= form_tag(properties_path, :method => "get", id: "search-form") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search Properties" %>
+                <%= submit_tag "Search", :name => nil %>
+            <% end %>
 
-<%= link_to "Advanced Search", new_search_path %>
+            <%= link_to "Advanced Search", new_search_path %>
 
-<% if @properties.blank? %>
-  <h4>There are no properties containing the term <%= params[:search] %>.</h4>
-<% end %>
+            <% if @properties.blank? %>
+              <h4>There are no properties containing the term <%= params[:search] %>.</h4>
+            <% end %>
 
-  <tbody>
-    <% @properties.each do |property| %>
+            
+                <% @properties.each do |property| %>
 
-    <div class="success">
-    <div class="container">
-    <h3 style="color: #18BC9C"><i class="fa fa-home" aria-hidden="true"></i>  <%= property.title %></h3>    
-    <h3>$<%= property.cost %></h3>
-    <h5><i class="fa fa-user" aria-hidden="true" style="font-size: 20px"></i> Propietario: <%= property.user.first_name%> <%= property.user.last_name%></h5>
-    
-    <h3 style="font-size: 20px">Dirección</h3>
-    <p style="font-size: 15px"><%= property.street %> <%= property.exterior %> Interior: <%= property.interior %></p>
-    <p style="font-size: 15px">Colonia <%= property.colonia %>, Delegación <%= property.delegacion %></p>
-    <p style="font-size: 15px">CP: <%= property.zipcode %> </p>
+                <div class="success">
+                  <div class="container">
+                    <h3 style="color: #18BC9C"><i class="fa fa-home" aria-hidden="true"></i>  <%= property.title %></h3>    
+                    <h3>$<%= property.cost %></h3>
+                    <h5><i class="fa fa-user" aria-hidden="true" style="font-size: 20px"></i> Propietario: <%= property.user.first_name%> <%= property.user.last_name%></h5>
+                    
+                    <h3 style="font-size: 20px">Dirección</h3>
+                    <p style="font-size: 15px"><%= property.street %> <%= property.exterior %> Interior: <%= property.interior %></p>
+                    <p style="font-size: 15px">Colonia <%= property.colonia %>, Delegación <%= property.delegacion %></p>
+                    <p style="font-size: 15px">CP: <%= property.zipcode %> </p>
 
-    <h3 style="font-size: 20px">Detalles</h3>
-    <p style="font-size: 15px"><%= property.tipo %></p>
-    <p style="font-size: 15px">No. de Cuartos: <%= property.room %></p>
-    <p style="font-size: 15px">No. de Roomies: <%= property.roomie %></p>
-    <p style="font-size: 15px">Servicios: <%= property.service %></p>
-    <p style="font-size: 15px"><i class="fa fa-paw" aria-hidden="true"></i> <%= property.pet %></p>
-    <p style="font-size: 15px"><i class="fa fa-car" aria-hidden="true"></i> <%= property.parking %></p>
-    <p style="font-size: 15px"><i class="fa fa-wifi" aria-hidden="true"></i> <%= property.internet %></p>
+                    <h3 style="font-size: 20px">Detalles</h3>
+                    <p style="font-size: 15px"><%= property.tipo %></p>
+                    <p style="font-size: 15px">No. de Cuartos: <%= property.room %></p>
+                    <p style="font-size: 15px">No. de Roomies: <%= property.roomie %></p>
+                    <p style="font-size: 15px">Servicios: <%= property.service %></p>
+                    <p style="font-size: 15px"><i class="fa fa-paw" aria-hidden="true"></i> <%= property.pet %></p>
+                    <p style="font-size: 15px"><i class="fa fa-car" aria-hidden="true"></i> <%= property.parking %></p>
+                    <p style="font-size: 15px"><i class="fa fa-wifi" aria-hidden="true"></i> <%= property.internet %></p>
 
-    <h3 style="font-size: 20px">Descripción</h3>
-    <p style="font-size: 15px"><%= property.description %></p>
+                    <h3 style="font-size: 20px">Descripción</h3>
+                    <p style="font-size: 15px"><%= property.description %></p>
 
-        <td><%= link_to 'Show', property %></td>
-        <% if property.user == current_user %>
-        <td><%= link_to 'Edit', edit_property_path(property) %></td>
-        <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-     
-    <% end %>
-    </div>
-    </div>
-  </tbody>
-</table>
+                          <td><%= link_to 'Show', property %></td>
+                        <% if property.user == current_user %>
+                          <td><%= link_to 'Edit', edit_property_path(property) %></td>
+                          <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                        <% end %>
+                     
+                    <% end %>
+                  </div>
+                </div>
+              <br>
 
-<br>
+            <%= link_to 'New Property', new_property_path %>
 
-<%= link_to 'New Property', new_property_path %>
+          </div>
 
-</div>
+  </section>
 
   <div class="col-sm-6 portfolio-item">
   </div>
@@ -71,9 +70,7 @@
   
   
 
-  </div>
-
-  </section>
+ 
 
   </body>
 

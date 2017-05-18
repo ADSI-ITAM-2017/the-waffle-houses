@@ -71,7 +71,7 @@
         <td><%= property.service %></td>
         <td><%= property.internet %></td>
         <td><%= property.description %></td>
-
+        <td><%= link_to "More info", properties_information_path(:id => property.id)%></td>
         <td><%= property.user.email %></td>
         <td><%= link_to 'Show', property %></td>
         <% if property.user == current_user %>
@@ -94,7 +94,7 @@
 
   <div class="col-sm-2 portfolio-item">
   </div>
-  
+
 
   </div>
 

@@ -46,6 +46,8 @@
                     <h3 style="font-size: 20px">Descripción</h3>
                     <p style="font-size: 15px"><%= property.description %></p>
 
+                    
+
                           <td><%= link_to 'Show', property %></td>
                         <% if property.user == current_user %>
                           <td><%= link_to 'Edit', edit_property_path(property) %></td>

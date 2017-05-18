@@ -18,86 +18,28 @@
  <%= image_tag picture.image_url %>
 <% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @property.title %>
 
-</p>
 
-<p>
-  <strong>Cost:</strong>
-  <%= @property.cost %>
-</p>
+<h3 style="color: #18BC9C"><i class="fa fa-home" aria-hidden="true"></i>  <%= @property.title %></h3>    
+                    <h3>$<%= @property.cost %></h3>
+                    <h5><i class="fa fa-user" aria-hidden="true" style="font-size: 20px"></i> Propietario: <%= @property.user.first_name %> <%= @property.user.last_name %> </h5>
+                    
+                    <h3 style="font-size: 20px">Dirección</h3>
+                    <p style="font-size: 15px"><%= @property.street %> <%= @property.exterior %> Interior: <%= @property.interior %></p>
+                    <p style="font-size: 15px">Colonia <%= @property.colonia %>, Delegación <%= @property.delegacion %></p>
+                    <p style="font-size: 15px">CP: <%= @property.zipcode %> </p>
 
-<p>
-  <strong>Delegacion:</strong>
-  <%= @property.delegacion %>
-</p>
+                    <h3 style="font-size: 20px">Detalles</h3>
+                    <p style="font-size: 15px"><%= @property.tipo %></p>
+                    <p style="font-size: 15px">No. de Cuartos: <%= @property.room %></p>
+                    <p style="font-size: 15px">No. de Roomies: <%= @property.roomie %></p>
+                    <p style="font-size: 15px">Servicios: <%= @property.service %></p>
+                    <p style="font-size: 15px"><i class="fa fa-paw" aria-hidden="true"></i> <%= @property.pet %></p>
+                    <p style="font-size: 15px"><i class="fa fa-car" aria-hidden="true"></i> <%= @property.parking %></p>
+                    <p style="font-size: 15px"><i class="fa fa-wifi" aria-hidden="true"></i> <%= @property.internet %></p>
 
-<p>
-  <strong>Colonia:</strong>
-  <%= @property.colonia %>
-</p>
-
-<p>
-  <strong>Street:</strong>
-  <%= @property.street %>
-</p>
-
-<p>
-  <strong>Interior:</strong>
-  <%= @property.interior %>
-</p>
-
-<p>
-  <strong>Exterior:</strong>
-  <%= @property.exterior %>
-</p>
-
-<p>
-  <strong>Zipcode:</strong>
-  <%= @property.zipcode %>
-</p>
-
-<p>
-  <strong>Tipo:</strong>
-  <%= @property.tipo %>
-</p>
-
-<p>
-  <strong>Roomie:</strong>
-  <%= @property.roomie %>
-</p>
-
-<p>
-  <strong>Room:</strong>
-  <%= @property.room %>
-</p>
-
-<p>
-  <strong>Pet:</strong>
-  <%= @property.pet %>
-</p>
-
-<p>
-  <strong>Parking:</strong>
-  <%= @property.parking %>
-</p>
-
-<p>
-  <strong>Service:</strong>
-  <%= @property.service %>
-</p>
-
-<p>
-  <strong>Internet:</strong>
-  <%= @property.internet %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @property.description %>
-</p>
+                    <h3 style="font-size: 20px">Descripción</h3>
+                    <p style="font-size: 15px"><%= @property.description %></p>
 
 
 <%= link_to 'Edit', edit_property_path(@property) %> |
@@ -107,6 +49,62 @@
 </div>
 
   <div class="col-sm-4 portfolio-item">
+
+<div class="well">
+
+                      <div class="text-right">
+                          <a class="btn btn-success">Leave a Review</a>
+                      </div>
+
+                      <hr>
+
+                      <div class="row">
+                          <div class="col-md-12">
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star-empty"></span>
+                              Anonymous
+                              <span class="pull-right">10 days ago</span>
+                              <p>This product was great in terms of quality. I would definitely buy another!</p>
+                          </div>
+                      </div>
+
+                      <hr>
+
+                      <div class="row">
+                          <div class="col-md-12">
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star-empty"></span>
+                              Anonymous
+                              <span class="pull-right">12 days ago</span>
+                              <p>I've alredy ordered another one!</p>
+                          </div>
+                      </div>
+
+                      <hr>
+
+                      <div class="row">
+                          <div class="col-md-12">
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star"></span>
+                              <span class="glyphicon glyphicon-star-empty"></span>
+                              Anonymous
+                              <span class="pull-right">15 days ago</span>
+                              <p>I've seen some better than this, but not at this price. I definitely recommend this item.</p>
+                          </div>
+                      </div>
+
+                  </div>
+
+              </div>
+
   </div>
 
   <div class="col-sm-2 portfolio-item">

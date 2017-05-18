@@ -1,0 +1,109 @@
+
+<%= form_for @property, html: { class: 'form-horizontal', multipart: true } do |f| %>
+  <% if property.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(property.errors.count, "error") %> prohibited this property from being saved:</h2>
+
+      <ul>
+      <% property.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+
+  <div class="field">
+    <%= f.label "Título" %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Costo" %><br />
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Delegación" %><br />
+    <%= f.text_field :delegacion %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Colonia" %><br />
+    <%= f.text_field :colonia %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Calle" %><br />
+    <%= f.text_field :street %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Número exterior" %><br />
+    <%= f.number_field :exterior %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Número interior" %><br />
+    <%= f.number_field :interior %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Código postal" %><br />
+    <%= f.number_field :zipcode %>
+  </div>
+
+  <div class="field">
+    <%= f.label "¿Rentas departamento o habitación?" %><br />
+    <%= f.select :tipo, [['Departamento','dep'],['Habitación','hab']] %>
+  </div>
+
+  <div class="field">
+    <%= f.label "¿Cuántos roomies?" %><br />
+    <%= f.number_field :roomie %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Número de habitaciones" %><br />
+    <%= f.number_field :room %>
+  </div>
+
+  <div class="field">
+    <%= f.label "¿Se permiten mascotas?" %><br />
+    <%= f.select :pet, [['Sí','Sí'],['No','No']] %>
+  </div>
+
+  <div class="field">
+    <%= f.label "¿Estacionamiento?" %><br />
+    <%= f.select :parking, [['Sí','Sí'],['No','No']] %>
+  </div>
+
+  <div class="field">
+    <%= f.label "¿Servicios incluidos?" %><br />
+    <%= f.select :service, [['Sí','Sí'],['No','No']] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :internet %><br />
+    <%= f.select :internet, [['Sí','Sí'],['No','No']] %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Breve descripción de la propiedad" %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="control-group">
+    <%= f.label :pictures, class: 'control-label' %>
+    <div class="controls">
+      <%= file_field_tag "images[]", type: :file, multiple: true %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, class: 'btn btn-primary' %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                properties_path, class: 'btn btn-mini' %>
+  </div>
+<% end %>

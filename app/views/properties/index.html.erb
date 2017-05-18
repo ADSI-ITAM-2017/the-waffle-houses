@@ -6,12 +6,6 @@
 <section id="portfolio">
         <div class="container">
 
-          <div class="col-sm-2 portfolio-item">
-  </div>
-
-  <div class="col-sm-4 portfolio-item" style="align-content: right">
-
-
 <p id="notice"><%= notice %></p>
 
 <h1>Properties</h1>
@@ -27,59 +21,41 @@
   <h4>There are no properties containing the term <%= params[:search] %>.</h4>
 <% end %>
 
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Cost</th>
-      <th>Delegacion</th>
-      <th>Colonia</th>
-      <th>Street</th>
-      <th>Interior</th>
-      <th>Exterior</th>
-      <th>Zipcode</th>
-      <th>Tipo</th>
-      <th>Roomie</th>
-      <th>Room</th>
-      <th>Pet</th>
-      <th>Parking</th>
-      <th>Service</th>
-      <th>Internet</th>
-      <th>Description</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
   <tbody>
     <% @properties.each do |property| %>
-      <tr>
-        <td><%= property.title %></td>
-        <td><%= property.cost %></td>
-        <td><%= property.delegacion %></td>
-        <td><%= property.colonia %></td>
-        <td><%= property.street %></td>
-        <td><%= property.interior %></td>
-        <td><%= property.exterior %></td>
-        <td><%= property.zipcode %></td>
-        <td><%= property.tipo %></td>
-        <td><%= property.roomie %></td>
-        <td><%= property.room %></td>
-        <td><%= property.pet %></td>
-        <td><%= property.parking %></td>
-        <td><%= property.service %></td>
-        <td><%= property.internet %></td>
-        <td><%= property.description %></td>
 
-        <td><%= property.user.email %></td>
+    <div class="success">
+    <div class="container">
+    <h3 style="color: #18BC9C"><i class="fa fa-home" aria-hidden="true"></i>  <%= property.title %></h3>    
+    <h3>$<%= property.cost %></h3>
+    <h5><i class="fa fa-user" aria-hidden="true" style="font-size: 20px"></i> Propietario: <%= property.user.first_name%> <%= property.user.last_name%></h5>
+    
+    <h3 style="font-size: 20px">Dirección</h3>
+    <p style="font-size: 15px"><%= property.street %> <%= property.exterior %> Interior: <%= property.interior %></p>
+    <p style="font-size: 15px">Colonia <%= property.colonia %>, Delegación <%= property.delegacion %></p>
+    <p style="font-size: 15px">CP: <%= property.zipcode %> </p>
+
+    <h3 style="font-size: 20px">Detalles</h3>
+    <p style="font-size: 15px"><%= property.tipo %></p>
+    <p style="font-size: 15px">No. de Cuartos: <%= property.room %></p>
+    <p style="font-size: 15px">No. de Roomies: <%= property.roomie %></p>
+    <p style="font-size: 15px">Servicios: <%= property.service %></p>
+    <p style="font-size: 15px"><i class="fa fa-paw" aria-hidden="true"></i> <%= property.pet %></p>
+    <p style="font-size: 15px"><i class="fa fa-car" aria-hidden="true"></i> <%= property.parking %></p>
+    <p style="font-size: 15px"><i class="fa fa-wifi" aria-hidden="true"></i> <%= property.internet %></p>
+
+    <h3 style="font-size: 20px">Descripción</h3>
+    <p style="font-size: 15px"><%= property.description %></p>
+
         <td><%= link_to 'Show', property %></td>
         <% if property.user == current_user %>
         <td><%= link_to 'Edit', edit_property_path(property) %></td>
         <td><%= link_to 'Destroy', property, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
-      </tr>
+     
     <% end %>
+    </div>
+    </div>
   </tbody>
 </table>
 
@@ -89,11 +65,10 @@
 
 </div>
 
-  <div class="col-sm-4 portfolio-item">
+  <div class="col-sm-6 portfolio-item">
   </div>
 
-  <div class="col-sm-2 portfolio-item">
-  </div>
+  
   
 
   </div>

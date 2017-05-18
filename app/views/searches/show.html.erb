@@ -1,0 +1,21 @@
+<h1> Search Result </h1>h1>
+<p><%=link_to 'Back', new_search_path %></p>
+
+<% if @search.search_properties.empty? %>
+
+	<p>No Records Found</p>
+
+<% else %>
+
+	<% @search.search_properties.each do |c| %>
+		<br>
+
+		<div class="div">
+			<h1><%= c.title %></h1>
+			<p>Price: $<%=c.cost %></p>
+			<p>Tipo: <%= c.tipo %></p>
+		</div>
+
+	<% end %>
+
+<% end %>

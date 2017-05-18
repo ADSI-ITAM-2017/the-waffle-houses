@@ -4,17 +4,17 @@
 
 	<div class="field">
 	  <%= s.label :keywords %><br />
-	  <%= s.text_field :keywords %>  
+	  <%= s.text_field :keywords %>
 	</div>
 
 	<div class="field">
 	  <%= s.label :tipo %><br />
-	  <%= s.select :tipo, options_for_select(@tipos), :include_blank => true %>  
+	  <%= s.select :tipo, options_for_select(@tipos), :include_blank => true %>
 	</div>
 
 	<div class="field">
-	  <p><%= s.label :min_price, "MinPrice" %> - <%= s.text_field :minprice, size: 10 %></p>
-	  <p><%= s.label :max_price, "MaxPrice" %> - <%= s.text_field :maxprice, size: 10 %></p> 
+	  <p><%= s.label :min_price, "MinPrice" %> - <%= s.text_field :min_price, size: 10 %></p>
+	  <p><%= s.label :max_price, "MaxPrice" %> - <%= s.text_field :max_price, size: 10 %></p> 
 	</div>
 
 	<div class="actions"><%= s.submit "Search", class: "pure-button pure-button-primary" %></div>

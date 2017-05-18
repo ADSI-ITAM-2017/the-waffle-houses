@@ -9,5 +9,5 @@ class Search < ApplicationRecord
 		properties = properties.where(["cost <= ?", max_price]) if min_price.present?
 
 		return properties
-
+end
 end

@@ -74,6 +74,18 @@ class PropertiesController < ApplicationController
     end
   end
 
+  def information
+    if session[:current_user_id] == nil
+      redirect_to users_login_path
+    else
+      @property=Property.find(params[:id])
+      @user = User.find(session[:current_user_id]) #Conseguir el user.
+    end
+
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_property

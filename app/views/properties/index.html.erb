@@ -20,7 +20,6 @@
             <% if @properties.blank? %>
               <h4>There are no properties containing the term <%= params[:search] %>.</h4>
             <% end %>
-
             
                 <% @properties.each do |property| %>
 
@@ -28,7 +27,7 @@
                   <div class="container">
                     <h3 style="color: #18BC9C"><i class="fa fa-home" aria-hidden="true"></i>  <%= property.title %></h3>    
                     <h3>$<%= property.cost %></h3>
-                    <h5><i class="fa fa-user" aria-hidden="true" style="font-size: 20px"></i> Propietario: <%= property.user.first_name%> <%= property.user.last_name%></h5>
+                    <h5><i class="fa fa-user" aria-hidden="true" style="font-size: 20px"></i> Propietario: <%= property.user.first_name %> <%= property.user.last_name %> </h5>
                     
                     <h3 style="font-size: 20px">Dirección</h3>
                     <p style="font-size: 15px"><%= property.street %> <%= property.exterior %> Interior: <%= property.interior %></p>
@@ -58,7 +57,15 @@
                 </div>
               <br>
 
+            <% if current_user.tipo_de_usuario == "inquilino" %>
+
+             
+
+            <% else %>
+
             <%= link_to 'New Property', new_property_path %>
+
+            <% end %>
 
           </div>
 
@@ -75,3 +82,4 @@
   </body>
 
   </html>
+

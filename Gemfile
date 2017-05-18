@@ -41,6 +41,8 @@ gem 'devise', '~> 4.2', '>= 4.2.1'
 
 gem 'paypal-recurring', '~> 1.1'
 
+gem 'javascript'
+
 gem 'pundit', '~> 1.1'
 
 # Use Capistrano for deployment

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  require "javascript"
 	before_action :set_user, only: [:show, :edit, :update] # probably want to keep using this
+
 
   # GET /users
   # GET /users.json

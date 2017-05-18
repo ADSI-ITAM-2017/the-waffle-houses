@@ -37,9 +37,9 @@ class PropertiesController < ApplicationController
         end
 
         format.html { redirect_to @property, notice: 'Property was successfully created.' }
-        format.json { render :show, status: :created, location: @property }
+        format.json { render json: @market, status: :created, location: @property }
       else
-        format.html { render :new }
+        format.html { render action: "new" }
         format.json { render json: @property.errors, status: :unprocessable_entity }
       end
     end

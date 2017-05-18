@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% @property.pictures do |picture| %> 
+  <p> <%= picture.image_file_name %></p>
+ <%= image_tag picture.image_url %>
+<% end %>
 
 <p>
   <strong>Title:</strong>

@@ -28,7 +28,7 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: 'localhost:3000/' }
+  config.action_mailer.default_url_options = { host: '184.72.213.202:3000/' }
   config.action_mailer.delivery_method = :smtp
 
     config.action_mailer.smtp_settings =
@@ -37,7 +37,7 @@ Rails.application.configure do
         port:                 587,
         domain:               'thewafflehouses.com',
         user_name:            'thewafflehouses@gmail.com',
-        password:             'sBU-kHN-JDh-9DQ',
+        password:             'GEw-SDM-cFx-yE8',
         authentication:       'plain',
         enable_starttls_auto: true
     }
